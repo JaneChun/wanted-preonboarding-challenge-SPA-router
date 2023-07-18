@@ -1,13 +1,11 @@
-import { ReactNode, useContext } from 'react';
-import { RouterContext } from '../context/routerContext';
+import { ReactNode } from 'react';
 
 interface RouteProps {
 	path: string;
 	component: ReactNode;
 }
 const Route = ({ path, component }: RouteProps) => {
-	const { currentPath } = useContext(RouterContext)!;
-	return currentPath === path ? component : null;
+	return component;
 };
 
 export default Route;
