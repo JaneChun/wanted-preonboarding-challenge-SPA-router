@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
-import { useRouter } from '../hook/useRouter';
+import { ReactNode, useContext } from 'react';
+import { RouterContext } from '../context/routerContext';
 
 interface RouteProps {
 	path: string;
 	component: ReactNode;
 }
 const Route = ({ path, component }: RouteProps) => {
-	const { currentPath } = useRouter();
+	const { currentPath } = useContext(RouterContext)!;
 	return currentPath === path ? component : null;
 };
 
